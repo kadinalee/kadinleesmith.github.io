@@ -1,4 +1,158 @@
-/* Contact Section Styles */
+/* Purple Aesthetic Theme */
+:root {
+    --primary: #6a0dad;
+    --secondary: #9370db;
+    --accent: #ba55d3;
+    --text: #ffffff;
+    --bg: rgba(0, 0, 0, 0.5);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --border: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.main-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    padding: 0.5rem;
+}
+
+.main-nav a.active {
+    color: #e0b0ff;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    color: #e0b0ff;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 1rem 0;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: white;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem 0;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.project-highlight {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+/* Skills Section */
+.section-block {
+    margin-bottom: 2rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    text-indent: -1rem;
+}
+
+/* Portfolio Section */
+.project {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e0b0ff;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Contact Section */
 .contact-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,10 +161,10 @@
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border);
 }
 
 .contact-details p {
@@ -62,8 +216,8 @@
     width: 100%;
     padding: 0.75rem;
     border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
+    background: var(--card-bg);
     color: white;
     font-family: inherit;
 }
@@ -80,13 +234,14 @@
 
 .btn {
     padding: 0.75rem 1.5rem;
-    background: #ba55d3;
+    background: var(--accent);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .btn:hover {
@@ -94,13 +249,39 @@
     transform: translateY(-2px);
 }
 
-/* Responsive Adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
     .contact-info {
         grid-template-columns: 1fr;
     }
     
     .contact-card {
         margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .main-nav ul {
+        gap: 0.8rem;
+    }
+    
+    .main-nav a {
+        font-size: 1rem;
     }
 }
