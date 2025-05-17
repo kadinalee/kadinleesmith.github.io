@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kadin Lee-Smith | Software Developer</title>
+    <title>Kadin Lee-Smith | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -11,18 +11,18 @@
     <div class="container">
         <nav class="main-nav">
             <ul>
-                <li><a href="#about" class="active">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="active">• About</a></li>
+                <li><a href="#skills">• Skills</a></li>
+                <li><a href="#portfolio">• Portfolio</a></li>
+                <li><a href="#contact">• Contact</a></li>
             </ul>
         </nav>
 
         <main>
             <section id="about" class="tab-content active">
                 <h1>I'm Kadin Lee-Smith.</h1>
-                <p class="subtitle">I'm a Computer Science major with Mathematics minor, passionate about software development.</p>
-                <p>In my free time, you can catch me <strong>solving complex algorithms</strong>, contributing to <strong>open-source projects</strong>, or exploring the intersection of <strong>mathematics and computer science</strong>.</p>
+                <p class="intro-text">I'm a Computer Science major with Mathematics minor, passionate about software development.</p>
+                <p class="hobbies-text">In my free time, you can catch me <strong>solving complex algorithms</strong>, contributing to <strong>open-source projects</strong>, or exploring the intersection of <strong>mathematics and computer science</strong>.</p>
                 <div class="action-buttons">
                     <a href="#skills" class="btn">View Skills</a>
                     <a href="#contact" class="btn">Contact</a>
@@ -31,13 +31,13 @@
 
             <section id="skills" class="tab-content">
                 <h2>Skills</h2>
-                <div class="skills-section">
+                <div class="section-block">
                     <h3>Education</h3>
-                    <p><strong>Bachelor of Science in Computer Science</strong><br>
+                    <p class="education-item">Bachelor of Science in Computer Science<br>
                     Minor in Mathematics<br>
                     [Your University Name], Expected Graduation [Year]</p>
                 </div>
-                <div class="skills-section">
+                <div class="section-block">
                     <h3>Technical Skills</h3>
                     <ul class="skills-list">
                         <li>Java</li>
@@ -54,7 +54,7 @@
 
             <section id="portfolio" class="tab-content">
                 <h2>Portfolio</h2>
-                <div class="project">
+                <div class="section-block">
                     <h3>Quickest Maze Project</h3>
                     <p>A puzzle game about finding the fastest path through doors.</p>
                     <a href="https://github.com/kadinalee/Puzzle-Project" class="project-link">
@@ -64,58 +64,22 @@
             </section>
 
             <section id="contact" class="tab-content">
-                <h2>Contact</h2>
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3>Kadin Lee-Smith</h3>
-                        <div class="contact-details">
-                            <p><i class="fas fa-envelope"></i> kathleen7@gmail.com</p>
-                            <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Victoria, BC, Canada</p>
-                        </div>
-                        
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                        </div>
-                    </div>
-                    
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+                <!-- Your contact section here -->
             </section>
         </main>
     </div>
 
     <script>
+        // Same JavaScript as before
         document.querySelectorAll('.main-nav a').forEach(tab => {
             tab.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                // Remove active class from all tabs and content
                 document.querySelectorAll('.main-nav a').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding content
                 this.classList.add('active');
                 const target = this.getAttribute('href');
                 document.querySelector(target).classList.add('active');
-                
-                // Smooth scroll to section
-                document.querySelector(target).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
