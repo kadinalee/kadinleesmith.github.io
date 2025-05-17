@@ -7,6 +7,8 @@
     --bg: rgba(0, 0, 0, 0.5);
     --card-bg: rgba(255, 255, 255, 0.1);
     --border: rgba(255, 255, 255, 0.2);
+    --success: #4bb543;
+    --error: #ff4444;
 }
 
 body {
@@ -201,13 +203,52 @@ p {
     transform: translateX(5px);
 }
 
-/* Updated icon - replaced Twitter with Handshake */
-.social-links a:last-child i {
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    content: "\f2b5"; /* Unicode for handshake icon */
+/* Form Success Message */
+.form-success {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+    animation: fadeIn 0.5s ease-out;
 }
 
+.form-success i {
+    color: var(--success);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.form-success h3 {
+    margin: 0.5rem 0;
+    color: white;
+}
+
+.form-success p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+/* Form Error Message */
+.form-error {
+    color: var(--error);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* Loading Spinner */
+.btn .fa-spinner {
+    margin-right: 8px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -227,6 +268,14 @@ p {
     background: var(--card-bg);
     color: white;
     font-family: inherit;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(186, 85, 211, 0.3);
 }
 
 .form-group textarea {
@@ -249,11 +298,20 @@ p {
     transition: all 0.3s;
     font-weight: bold;
     font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:hover {
     background: #9b30c0;
     transform: translateY(-2px);
+}
+
+.btn:disabled {
+    background: var(--secondary);
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* Responsive Design */
@@ -290,5 +348,13 @@ p {
     
     .main-nav a {
         font-size: 1rem;
+    }
+    
+    .form-success i {
+        font-size: 2rem;
+    }
+    
+    .form-success h3 {
+        font-size: 1.2rem;
     }
 }
