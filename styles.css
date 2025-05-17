@@ -201,6 +201,13 @@ p {
     transform: translateX(5px);
 }
 
+/* Updated icon - replaced Twitter with Handshake */
+.social-links a:last-child i {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: "\f2b5"; /* Unicode for handshake icon */
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
